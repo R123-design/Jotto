@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Congrats(props) {
-  console.log("Props", props);
+
   const { success } = props;
   const message = "Congrats You Guessed the correct word";
   if (success) {
@@ -13,4 +14,8 @@ export default function Congrats(props) {
   } else {
     return <div data-test="component-congrats" />;
   }
+}
+
+Congrats.propTypes = {
+    success: PropTypes.bool.isRequired,
 }
