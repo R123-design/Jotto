@@ -8,7 +8,7 @@ Enzyme.configure({adapter: new EnzymeAdapter()});
 
 const setUp = (initialState={}) => {
     const store = storeFactory(initialState)
-    const wrapper = shallow(<Input store={store}/>)
+    const wrapper = shallow(<Input store={store}/>).dive().dive();
     console.log(wrapper.debug());
 }
 

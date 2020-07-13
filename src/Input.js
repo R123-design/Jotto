@@ -5,11 +5,11 @@ class Input extends React.Component {
     render() {
         return (
             <div>
-                Input
+                <button>Click ME!!</button>
             </div>
         );
     }
-}
+};
 
 const mapStateToProps = (state, ownProps) => {
     return {};
