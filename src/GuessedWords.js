@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./GuessWords.css";
 
 export default function GuessedWords(props) {
   let contents;
   if (props.guessedWords.length === 0) {
     contents = (
-      <span data-test="guess-instructions">Try to guess the secret words</span>
+      <span data-test="guess-instructions">Try to guess the secret word</span>
     );
   } else {
     const guessedWordsRows = props.guessedWords.map((word, index) => {
@@ -17,16 +18,16 @@ export default function GuessedWords(props) {
       );
     });
     contents = (
-      <div data-test="guessed-words">
+      <div data-test="guessed-words" className="content">
         <h3>Guessed Words</h3>
-        <table>
+        <table className="topPadding">
           <thead>
             <tr>
-              <th>Guess</th>
-              <th>Matching Letters</th>
+              <th className="guess">Guess</th>
+              <th className="letters">Matching Letters</th>
             </tr>
           </thead>
-          <tbody>{guessedWordsRows}</tbody>
+          <tbody className="table">{guessedWordsRows}</tbody>
         </table>
       </div>
     );
