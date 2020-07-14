@@ -8,7 +8,7 @@ describe("getSecretWord action creator", () => {
   });
   afterEach(() => {
     moxios.uninstall();
-  }); 
+  });
   test("adds response word to state", () => {
     const secretWord = "party";
     const store = storeFactory();
