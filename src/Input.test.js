@@ -2,7 +2,7 @@ import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import EnzymeAdapter from "enzyme-adapter-react-16";
 import { findByTestAttr, storeFactory } from "../test/testUtils";
-import Input from "./Input";
+import Input, { UnconnectedInput } from "./Input";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
@@ -69,5 +69,19 @@ describe("redux props", () => {
     const wrapper = setUp();
     const guessWordProp = wrapper.instance().props.guessWord;
     expect(guessWordProp).toBeInstanceOf(Function);
+  });
+});
+
+describe("`guessWord action creator call`", () => {
+  test("`guessWord` action creator runs when submit btn is clicked", () => {
+    const guessWordMock = jest.fn();
+    const props = {
+      guessWord: guessWordMock,
+    };
+    const wrapper = shallow(<UnconnectedInput {...props} />);
+    const submitButton = findByTestAttr(wrapper, "submit-btn");
+    submitButton.simulate("click");
+    const guessWordCallCount = guessWordMock.mock.calls.length;
+    expect(guessWordCallCount).toBe(1);
   });
 });
