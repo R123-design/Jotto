@@ -7,20 +7,17 @@ import { connect } from "react-redux";
 import { getSecretWord } from "./actions";
 
 export class UnconnectedApp extends React.Component {
-  
   componentDidMount() {
     this.props.getSecretWord();
   }
   render() {
-    const {success, secretWord, guessedWords} = this.props;
+    const { success, secretWord, guessedWords } = this.props;
     return (
       <div className="App">
         <h1>Jotto</h1>
         <Congrats success={success} />
         <Input secretWord={secretWord} />
-        <GuessedWords
-          guessedWords={guessedWords}
-        />
+        <GuessedWords guessedWords={guessedWords} />
       </div>
     );
   }
