@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watch",
+    "test": "jest --watch --env=node",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,20 +38,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
     "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "identity-obj-proxy": "^3.0.0",
     "jest-enzyme": "^7.1.2",
     "moxios": "^0.4.0"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
   }
 }

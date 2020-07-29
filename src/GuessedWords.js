@@ -32,7 +32,7 @@ export default function GuessedWords(props) {
       </div>
     );
   }
-  return <div data-test="component-guessed-words">{contents}</div>;
+  return <div data-test="component-guessed-words" className="guess_contents">{contents}</div>;
 }
 
 GuessedWords.propTypes = {

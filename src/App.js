@@ -13,11 +13,19 @@ export class UnconnectedApp extends React.Component {
   render() {
     const { success, secretWord, guessedWords } = this.props;
     return (
-      <div className="App">
-        <h1>Jotto</h1>
-        <Congrats success={success} />
-        <Input secretWord={secretWord} />
-        <GuessedWords guessedWords={guessedWords} />
+      <div className="full">
+        <div className="App">
+          <h1>Jotto</h1>
+          <div className="secret">
+            The secret word is &nbsp;<strong>{secretWord}</strong>
+            {/* {secretWord.split("").map((letter, index) => {
+            <span>{`The Secret Word starts with ${letter[0]} and ends with ${letter[4]}`}</span>;
+          })} */}
+          </div>
+          <Congrats success={success} />
+          <Input secretWord={secretWord} />
+          <GuessedWords guessedWords={guessedWords} />
+        </div>
       </div>
     );
   }
